@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC		= gcc
+CC		= cc
 AR		= ar -r
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= libftprintf.a
-SRCS	= ft_printf.c ft_printf_utils.c ft_putchar_fd.c ft_itoa.c ft_utoa.c
+SRCS	= ft_printf.c ft_printf_utils.c ft_printf_libft.c
 OBJS	= ${SRCS:.c=.o}
 
 .c.o:
@@ -30,11 +30,15 @@ clean:
 	${RM} ${OBJS}
 
 fclean:clean
-	${RM} ${NAME} a.out
+	${RM} ${NAME}
 
 re:fclean all
 
+# Rule for tests
 debug:all
-	${CC} main.c ${NAME} && clear && ./a.out
+	${CC} ../test/main.c ${NAME} && clear && ./a.out
 
-.PHONY: all clean fclean re
+git:fclean
+	${RM} a.out ../.DS_Store .DS_Store ../test/.DS_Store
+
+.PHONY: all clean fclean re debug git

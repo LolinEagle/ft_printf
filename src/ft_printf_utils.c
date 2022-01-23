@@ -12,13 +12,25 @@
 
 #include "ft_printf.h"
 
+int	ft_printf_put(char *s)
+{
+	int	i;
+
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i])
+		write(0, &s[i++], 1);
+	return (i);
+}
+
 int	ft_printf_int(va_list list)
 {
 	int		i;
 	char	*res;
 
 	res = ft_itoa((int)va_arg(list, int));
-	i = ft_putstr(res);
+	i = ft_printf_put(res);
 	free(res);
 	return (i);
 }
@@ -40,7 +52,7 @@ int	ft_printf_ptr(long unsigned int ptr)
 {
 	int	i;
 
-	ft_putstr("0x");
+	ft_printf_put("0x");
 	i = ft_printf_hex(ptr);
 	return (i + 2);
 }
@@ -51,7 +63,7 @@ int	ft_printf_uns(va_list list)
 	char	*res;
 
 	res = ft_utoa((unsigned int)va_arg(list, unsigned int));
-	i = ft_putstr(res);
+	i = ft_printf_put(res);
 	free(res);
 	return (i);
 }

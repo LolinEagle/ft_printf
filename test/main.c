@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../src/ft_printf.h"
 #include <stdio.h>// printf
 #define PF printf
 #define FT ft_printf
@@ -50,6 +50,16 @@ void	ft_string(void)
 	str = "Bonsoir je fait 23 char";
 	PF("[%i]\n", PF("%s", str));
 	FT("[%i]\n", FT("%s", str));
+	PF("[%i]\n", PF("%s", "\0"));
+	FT("[%i]\n", FT("%s", "\0"));
+	PF("[%i]\n", PF(" %s ", "-"));
+	FT("[%i]\n", FT(" %s ", "-"));
+	PF("[%i]\n", PF(" %s %s ", "", "-"));
+	FT("[%i]\n", FT(" %s %s ", "", "-"));
+	PF("[%i]\n", PF(" %s %s ", " - ", ""));
+	FT("[%i]\n", FT(" %s %s ", " - ", ""));
+	//PF("[%i]\n", PF(" %s %s %s %s %s", " - ", "", "4", "", s2));
+	//PF("[%i]\n", PF(" %s %s %s %s %s ", " - ", "", "4", "", "2 "));
 }
 
 void	ft_int(void)

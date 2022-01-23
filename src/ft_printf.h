@@ -17,15 +17,14 @@
 # include <stdlib.h>// malloc free
 # include <stdarg.h>// va_start va_arg va_copy va_end
 
-void	ft_putchar_fd(char c, int fd);
-int		ft_dsize(unsigned int d);
 char	*ft_itoa(int n);
 char	*ft_utoa(unsigned int n);
+void	ft_putchar_fd(char c, int fd);
+int		ft_printf_put(char *s);
 int		ft_printf_int(va_list list);
 int		ft_printf_hex(long unsigned int hex);
 int		ft_printf_ptr(long unsigned int ptr);
 int		ft_printf_uns(va_list list);
-int		ft_putstr(char *s);
 int		ft_printf(const char *str, ...);
 
 #endif

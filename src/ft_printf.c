@@ -12,26 +12,14 @@
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
-{
-	int	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-		write(0, &s[i++], 1);
-	return (i);
-}
-
 int	ft_conversion(char str, va_list list)
 {
 	int	i;
 
 	if (str == 'c')
-		ft_putchar_fd((char)va_arg(list, int), 0);
+		ft_putchar_fd((char)va_arg(list, int), 1);
 	else if (str == 's')
-		i = ft_putstr((char *)va_arg(list, char *));
+		i = ft_printf_put((char *)va_arg(list, char *));
 	else if (str == 'p')
 		i = ft_printf_ptr((long unsigned int)va_arg(list, long unsigned int));
 	else if (str == 'd')
@@ -43,7 +31,7 @@ int	ft_conversion(char str, va_list list)
 	else if (str == 'x')
 		i = ft_printf_hex((unsigned int)va_arg(list, unsigned int));
 	else if (str == '%')
-		ft_putchar_fd('%', 0);
+		ft_putchar_fd('%', 1);
 	else
 		return (-1);
 	if (str == 'c' || str == '%')
@@ -63,7 +51,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (*str != '%')
 		{
-			ft_putchar_fd(*str, 0);
+			ft_putchar_fd(*str, 1);
 			i++;
 		}
 		else
