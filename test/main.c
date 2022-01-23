@@ -50,16 +50,18 @@ void	ft_string(void)
 	str = "Bonsoir je fait 23 char";
 	PF("[%i]\n", PF("%s", str));
 	FT("[%i]\n", FT("%s", str));
-	PF("[%i]\n", PF("%s", "\0"));
-	FT("[%i]\n", FT("%s", "\0"));
+	PF("[%i]\n", PF("%s", ""));
+	FT("[%i]\n", FT("%s", ""));
 	PF("[%i]\n", PF(" %s ", "-"));
 	FT("[%i]\n", FT(" %s ", "-"));
 	PF("[%i]\n", PF(" %s %s ", "", "-"));
 	FT("[%i]\n", FT(" %s %s ", "", "-"));
 	PF("[%i]\n", PF(" %s %s ", " - ", ""));
 	FT("[%i]\n", FT(" %s %s ", " - ", ""));
-	//PF("[%i]\n", PF(" %s %s %s %s %s", " - ", "", "4", "", s2));
-	//PF("[%i]\n", PF(" %s %s %s %s %s ", " - ", "", "4", "", "2 "));
+	PF("[%i]\n", PF(" %s %s %s %s %s ", " - ", "", "4", "", "2 "));
+	FT("[%i]\n", FT(" %s %s %s %s %s ", " - ", "", "4", "", "2 "));
+	PF("[%i]\n", PF(" NULL %s NULL ", NULL));
+	FT("[%i]\n", FT(" NULL %s NULL ", NULL));
 }
 
 void	ft_int(void)

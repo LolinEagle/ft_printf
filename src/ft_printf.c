@@ -29,7 +29,9 @@ int	ft_conversion(char str, va_list list)
 	else if (str == 'u')
 		i = ft_printf_uns(list);
 	else if (str == 'x')
-		i = ft_printf_hex((unsigned int)va_arg(list, unsigned int));
+		i = ft_printf_hex((unsigned int)va_arg(list, unsigned int), str);
+	else if (str == 'X')
+		i = ft_printf_hex((unsigned int)va_arg(list, unsigned int), str);
 	else if (str == '%')
 		ft_putchar_fd('%', 1);
 	else

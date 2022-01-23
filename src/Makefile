@@ -37,6 +37,7 @@ re:fclean all
 # Rule for tests
 debug:all
 	${CC} ../test/main.c ${NAME} && clear && ./a.out
+# | cat -e
 
 git:fclean
 	${RM} a.out ../.DS_Store .DS_Store ../test/.DS_Store

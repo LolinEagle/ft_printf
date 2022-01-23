@@ -49,7 +49,7 @@ char	*ft_itoa(int n)
 	else
 		num = n;
 	i += ft_dsize(num);
-	res = malloc (sizeof(char) * (i + 1));
+	res = malloc(sizeof(char) * (i + 1));
 	if (!res)
 		return (NULL);
 	res[i] = '\0';
@@ -70,7 +70,7 @@ char	*ft_utoa(unsigned int n)
 	char	*res;
 
 	i = ft_dsize(n);
-	res = malloc (sizeof(char) * (i + 1));
+	res = malloc(sizeof(char) * (i + 1));
 	if (!res)
 		return (NULL);
 	res[i] = '\0';

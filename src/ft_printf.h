@@ -6,7 +6,7 @@
 /*   By: frrusso <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 13:03:49 by frrusso           #+#    #+#             */
-/*   Updated: 2022/01/21 13:03:51 by frrusso          ###   ########.fr       */
+/*   Updated: 2022/01/23 15:05:32 by frrusso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_utoa(unsigned int n);
 void	ft_putchar_fd(char c, int fd);
 int		ft_printf_put(char *s);
 int		ft_printf_int(va_list list);
-int		ft_printf_hex(long unsigned int hex);
+int		ft_printf_hex(long unsigned int hex, char c);
 int		ft_printf_ptr(long unsigned int ptr);
 int		ft_printf_uns(va_list list);
 int		ft_printf(const char *str, ...);

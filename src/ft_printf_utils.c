@@ -17,10 +17,10 @@ int	ft_printf_put(char *s)
 	int	i;
 
 	if (!s)
-		return (0);
+		s = "(null)";
 	i = 0;
 	while (s[i])
-		write(0, &s[i++], 1);
+		write(1, &s[i++], 1);
 	return (i);
 }
 
@@ -35,16 +35,19 @@ int	ft_printf_int(va_list list)
 	return (i);
 }
 
-int	ft_printf_hex(long unsigned int hex)
+int	ft_printf_hex(long unsigned int hex, char c)
 {
 	int		i;
 	char	*hexa;
 
 	i = 0;
-	hexa = "0123456789abcdef";
+	if (c == 'x')
+		hexa = "0123456789abcdef";
+	else
+		hexa = "0123456789ABCDEF";
 	if (hex > 15)
-		i += ft_printf_hex(hex / 16);
-	ft_putchar_fd(hexa[hex % 16], 0);
+		i += ft_printf_hex(hex / 16, c);
+	ft_putchar_fd(hexa[hex % 16], 1);
 	return (i + 1);
 }
 
@@ -53,7 +56,7 @@ int	ft_printf_ptr(long unsigned int ptr)
 	int	i;
 
 	ft_printf_put("0x");
-	i = ft_printf_hex(ptr);
+	i = ft_printf_hex(ptr, 'x');
 	return (i + 2);
 }
 
