@@ -6,7 +6,7 @@
 #    By: frrusso <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/21 13:04:01 by frrusso           #+#    #+#              #
-#    Updated: 2022/01/21 13:04:02 by frrusso          ###   ########.fr        #
+#    Updated: 2022/01/24 12:11:13 by frrusso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,10 +36,9 @@ re:fclean all
 
 # Rule for tests
 debug:all
-	${CC} ../test/main.c ${NAME} && clear && ./a.out
-# | cat -e
+	${CC} ../test/main.c ../test/leacks_cheker_ex.c ${NAME} && clear && ./a.out
 
 git:fclean
-	${RM} a.out ../.DS_Store .DS_Store ../test/.DS_Store
+	${RM} a.out
 
 .PHONY: all clean fclean re debug git

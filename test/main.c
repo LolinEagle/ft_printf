@@ -15,6 +15,8 @@
 #define PF printf
 #define FT ft_printf
 
+void	check_leaks();
+
 void	ft_char(void)
 {
 	FT("- CHAR and %% -\n");
@@ -102,4 +104,5 @@ int	main(void)
 	ft_int();
 	ft_ptr_hex();
 	FT("\n");
+	check_leaks();
 }
