@@ -36,7 +36,7 @@ re:fclean all
 
 # Rule for tests
 debug:all
-	${CC} ../test/main.c ../test/leacks_cheker_ex.c ${NAME} && clear && ./a.out
+	${CC} ../test/main.c ${NAME} && clear && ./a.out
 
 git:fclean
 	${RM} a.out
